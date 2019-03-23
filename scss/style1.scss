@@ -1,0 +1,172 @@
+@import url(https://use.fontawesome.com/releases/v5.8.1/css/all.css);
+$break-small: 768px;
+$break-medium: 900px;
+body {
+    padding : 0px!important;
+    margin : 0px!important;
+    #main {
+        position: fixed;
+    }
+    #header-wrap {
+        background-color: black;
+        img {
+            margin-top: 10px;
+            height: 70px;
+            border-right: 1px solid white;
+            box-sizing: border-box;
+            padding-right: 25px;
+            @media screen and (max-width: $break-small) {
+                border-right:none;
+                padding-right: 0;
+            }
+        }
+        p {
+            padding-left: 40px;
+            color: aqua;
+            margin-top: 5px;
+            font-size: 50px;
+            
+            @media screen and (max-width: $break-medium) {
+                padding-left: 100px;
+            }
+            @media screen and (max-width: $break-small) {
+                padding-left: 0px;
+                font-size: 20px;
+            }
+        }
+        @media screen and (max-width: $break-small) {
+            text-align: center;
+        }
+    }
+    #content-wrap {
+        position: relative;
+        height: 85vh;
+        #form-wrap {
+            max-height: 90%;
+            overflow: auto;
+            position: absolute;
+            top: 30px;
+            left: 12%;
+            min-height: 77vh;
+            z-index: 5000000;
+        }
+        
+        #grey-form {
+            padding: 5% 7%;
+            padding-top: 70px;
+            background-color: rgba(82, 82, 82, 0.658);
+            min-height: 90%;
+        }
+        .content-bg {
+            height: 50%;
+        }
+        .blue {
+            background-color: rgb(6, 247, 255);
+        }
+        .form-input {
+            width: 70%;
+            color: white;
+            margin-left: 10px;
+            background-color: rgba(240, 248, 255, 0);
+            border: none;
+            border-bottom: 1px solid white;
+            outline: none;
+            margin-bottom: 40px;
+        }
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.692);
+        }
+        .label {
+            color: white;
+        }
+    }
+}
+
+.rating-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+#comment-wrapper {
+    margin-top: 30px;
+    input {
+        width: 80%!important;
+    }
+}
+
+::-webkit-scrollbar { 
+    display: none!important; 
+}
+
+#recommend-wrapper {
+    #radio-parent {
+        color: rgba(255, 255, 255, 0.596);
+        display: inline;
+        padding: 0 8%;
+        input {
+            margin-left: 20px;
+        }
+    }
+}
+
+.rating {
+    display: inline;
+    padding-left: 10px;
+}
+
+#submit-wrapper {
+    padding: 20px 0;
+    text-align: center;
+    button {
+        border: none;
+        border-radius: 10px;
+        color: white;
+        background-color: rgb(97, 97, 97);
+        padding: 5px 50px;
+        cursor: pointer;
+    }
+}
+
+fieldset, label { margin: 0; padding: 0; }
+body{ margin: 20px; }
+h1 { font-size: 1.5em; margin: 10px; }
+
+/****** Style Star Rating Widget *****/
+
+.rating { 
+  border: none;
+}
+
+.rating > input { display: none; } 
+.rating > label:before { 
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  content: "\f2dc";
+  
+  font-weight:lighter;
+}
+
+.rating > .half:before { 
+  content: "\f2dc";
+  position: absolute;
+  
+  font-weight:lighter;
+}
+
+.rating > label { 
+  color: #ddd; 
+ float: right; 
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: rgb(5, 205, 255);  } /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: rgb(5, 205, 255);  } 
