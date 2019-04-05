@@ -40,15 +40,21 @@ body {
     }
     #content-wrap {
         position: relative;
-        height: 85vh;
+        height: 65vh;
+        @media screen and (max-width: 575px) {
+            height: 30vh;
+        }
         #form-wrap {
             max-height: 90%;
             overflow: auto;
             position: absolute;
-            top: 30px;
+            top: 12%;
             left: 12%;
             min-height: 77vh;
             z-index: 5000000;
+            @media screen and (max-width: 575px) {
+                left: 5%;
+            }
         }
         
         #grey-form {
@@ -58,9 +64,10 @@ body {
             min-height: 90%;
         }
         .content-bg {
-            height: 50%;
+            height: 45vh;
         }
         .blue {
+            height: 50vh;
             background-color: rgb(6, 247, 255);
         }
         .form-input {
@@ -72,6 +79,16 @@ body {
             border-bottom: 1px solid white;
             outline: none;
             margin-bottom: 40px;
+        }
+        .company-form-input {
+            @media screen and (max-width: 575px) {
+                width: 60%;
+            }
+        }
+        .product-form-input {
+            @media screen and (max-width: 575px) {
+                width: 62%;
+            }
         }
         input::placeholder {
             color: rgba(255, 255, 255, 0.692);
@@ -100,11 +117,20 @@ body {
 
 #recommend-wrapper {
     #radio-parent {
-        color: rgba(255, 255, 255, 0.596);
-        display: inline;
-        padding: 0 8%;
-        input {
-            margin-left: 20px;
+        padding-top: 10px;
+        span {
+            color: rgba(255, 255, 255, 0.596);
+            display: inline;
+            padding: 0 8%;
+            @media screen and (max-width: 575px) {
+                display: inline-block!important;
+            }
+            input {
+                margin-left: 20px;
+                @media screen and (max-width: 575px) {
+                    margin-left: 0px;
+                }
+            }
         }
     }
 }

@@ -33,23 +33,30 @@ body {
         text-align: center; } }
   body #content-wrap {
     position: relative;
-    height: 85vh; }
+    height: 65vh; }
+    @media screen and (max-width: 575px) {
+      body #content-wrap {
+        height: 30vh; } }
     body #content-wrap #form-wrap {
       max-height: 90%;
       overflow: auto;
       position: absolute;
-      top: 30px;
+      top: 12%;
       left: 12%;
       min-height: 77vh;
       z-index: 5000000; }
+      @media screen and (max-width: 575px) {
+        body #content-wrap #form-wrap {
+          left: 5%; } }
     body #content-wrap #grey-form {
       padding: 5% 7%;
       padding-top: 70px;
       background-color: rgba(82, 82, 82, 0.658);
       min-height: 90%; }
     body #content-wrap .content-bg {
-      height: 50%; }
+      height: 45vh; }
     body #content-wrap .blue {
+      height: 50vh;
       background-color: #06f7ff; }
     body #content-wrap .form-input {
       width: 70%;
@@ -60,6 +67,12 @@ body {
       border-bottom: 1px solid white;
       outline: none;
       margin-bottom: 40px; }
+    @media screen and (max-width: 575px) {
+      body #content-wrap .company-form-input {
+        width: 60%; } }
+    @media screen and (max-width: 575px) {
+      body #content-wrap .product-form-input {
+        width: 62%; } }
     body #content-wrap input::placeholder {
       color: rgba(255, 255, 255, 0.692); }
     body #content-wrap .label {
@@ -78,11 +91,19 @@ body {
   display: none !important; }
 
 #recommend-wrapper #radio-parent {
-  color: rgba(255, 255, 255, 0.596);
-  display: inline;
-  padding: 0 8%; }
-  #recommend-wrapper #radio-parent input {
-    margin-left: 20px; }
+  padding-top: 10px; }
+  #recommend-wrapper #radio-parent span {
+    color: rgba(255, 255, 255, 0.596);
+    display: inline;
+    padding: 0 8%; }
+    @media screen and (max-width: 575px) {
+      #recommend-wrapper #radio-parent span {
+        display: inline-block !important; } }
+    #recommend-wrapper #radio-parent span input {
+      margin-left: 20px; }
+      @media screen and (max-width: 575px) {
+        #recommend-wrapper #radio-parent span input {
+          margin-left: 0px; } }
 
 .rating {
   display: inline;
