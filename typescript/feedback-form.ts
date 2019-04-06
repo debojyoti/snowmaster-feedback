@@ -216,17 +216,18 @@ export class FeedBackForm {
 
     submit() {
         return new Promise(resolve => {
-            $.ajax({
-                url: 'http://some-url',
-                method: 'POST',
-                params: {
-                    a: 1
-                },
-                success: () => {
-                    console.log('k');
-                    resolve(true);
-                }
-            })
+            // $.ajax({
+            //     url: 'http://some-url',
+            //     method: 'POST',
+            //     params: {
+            //         a: 1
+            //     },
+            //     success: () => {
+            //         console.log('k');
+            //         resolve(true);
+            //     }
+            // })
+            resolve(true);
         })
     }
 
