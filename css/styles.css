@@ -167,3 +167,164 @@ h1 {
 .rating > label:hover ~ input:checked ~ label,
 .rating > input:checked ~ label:hover ~ label {
   color: #05cdff; }
+
+  ::placeholder { color: rgb(255, 151, 151)!important; }
+  select {
+    border: none;
+    outline: none;
+  }
+  option {
+    outline: none;
+    background-color: #333333;
+    color: white;
+    border: none;
+    font-size: 13px;
+    padding: 10px 10px;
+  }
+
+  #toast-container {
+    background-color: rgba(226, 200, 200, 0);
+}
+
+.toast-error {
+  background-color: rgb(255, 61, 61)!important;
+}
+
+[type="date"] {
+  background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
+}
+[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+.dim
+{
+    display: none;
+    height:100%;
+    width:100%;
+    position:fixed;
+    left:0;
+    top:0;
+    z-index:100 !important;
+    background-color:black; 
+    filter: alpha(opacity=95); /* internet explorer */
+    -khtml-opacity: 0.95;      /* khtml, old safari */
+    -moz-opacity: 0.95;       /* mozilla, netscape */
+    opacity: 0.95;           /* fx, safari, opera */
+}
+
+.msg {
+    display:inline-block;
+    position: absolute;
+    
+    width: 400px;
+    height: 100px;
+    top: 0; 
+    bottom: 0; 
+    left: 0; 
+    text-align: center;
+    right: 0;
+    margin: auto;
+}
+
+@media screen and (max-width: 575px) {
+  .msg {
+    width: 300px; } }
+
+#success-msg {
+  filter: alpha(opacity=100); /* internet explorer */
+  -khtml-opacity: 1!important;      /* khtml, old safari */
+  -moz-opacity: 1!important;       /* mozilla, netscape */
+  opacity: 1!important;           /* fx, safari, opera */
+  background: white;
+  color: black;
+  min-height: 200px;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.checkmark {
+  width: 50px;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+  animation: dash 2s ease-in-out;
+  -webkit-animation: dash 2s ease-in-out;
+}
+
+.spin {
+  animation: spin 2s;
+  -webkit-animation: spin 2s;
+  transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%;
+}
+
+p {
+  font-family: sans-serif;
+  color: rgb(124, 255, 141);
+  font-size: 30px;
+  font-weight: bold;
+  margin: 20px auto;
+  text-align: center;
+  animation: text .5s linear .4s;
+  -webkit-animation: text .4s linear .3s;
+}
+
+@-webkit-keyframes dash {
+ 0% {
+   stroke-dashoffset: 1000;
+ }
+ 100% {
+   stroke-dashoffset: 0;
+ }
+}
+
+@keyframes dash {
+ 0% {
+   stroke-dashoffset: 1000;
+ }
+ 100% {
+   stroke-dashoffset: 0;
+ }
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes text {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1;
+  }
+
+  
+  @keyframes text {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+      "module": "commonjs",
+      "target": "es6",
+      "sourceMap": true,
+      "moduleResolution": "node"
+    },
+    "filesGlob": [
+        "./**/*.ts",
+        "!./node_modules/**/*.ts"
+    ],
+    "exclude": [
+      "node_modules"
+    ]
+  }

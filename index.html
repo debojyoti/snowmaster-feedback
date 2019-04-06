@@ -9,8 +9,10 @@
 
   <title>Dev Template</title>
 
-  <link rel="stylesheet" href="/snowmaster-feedback/css/bootstrap.css">
-  <link rel="stylesheet" href="/snowmaster-feedback/css/styles.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+  
 </head>
 
 <body>
@@ -34,62 +36,63 @@
               <div class="container" id="grey-form">
                 <div class="row">
                   <div class="col-md-5">
-                    <span class="label">Name: </span>  <input type="text" class="form-input">
+                    <span class="label">Name: </span>  <input type="text" id="name-input" class="form-input">
                   </div>
                   <div class="col-md-7">
                       <span class="label">Company: </span>
-                      <input type="text" class="form-input company-form-input">
+                      <input type="text" class="form-input company-form-input" id="company-input">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-5">
                         <span class="label">Date: </span>
-                      <input type="text" class="form-input">
+                      <input type="date" class="form-input" id="date-input">
                     </div>
                     <div class="col-md-7">
                         <span class="label">Product: </span>
-                        <input type="text" class="form-input product-form-input">
+                        <select id="product-select" class="form-input product-form-input">
+                        </select>
                       </div>
                   </div>
                   <div class="row">
                       <div class="col-md-6 rating-wrapper">
                         <span class="label">Service: </span>
-                        <fieldset class="rating">
-                            <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-                            <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-                            <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
-                            <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                        <fieldset class="rating" id="service-rating-fieldset">
+                            <input class="service-rating" type="radio" id="service-star-5" name="service-rating" value="5" /><label rate='5' class = "service-star-label full" for="service-star-5" title="Awesome - 5 stars"></label>
+                            <input class="service-rating" type="radio" id="service-star-4" name="service-rating" value="4" /><label rate='4' class = "service-star-label full" for="service-star-4" title="Pretty good - 4 stars"></label>
+                            <input class="service-rating" type="radio" id="service-star-3" name="service-rating" value="3" /><label rate='3' class = "service-star-label full" for="service-star-3" title="Meh - 3 stars"></label>
+                            <input class="service-rating" type="radio" id="service-star-2" name="service-rating" value="2" /><label rate='2' class = "service-star-label full" for="service-star-2" title="Kinda bad - 2 stars"></label>
                             
-                            <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                            <input class="service-rating" type="radio" id="service-star-1" name="service-rating" value="1" /><label rate='1' class = "service-star-label full" for="service-star-1" title="Sucks big time - 1 star"></label>
                         </fieldset>
                       </div>
                       <div class="col-md-6  rating-wrapper">
                           <span class="label">Product: </span>
-                          <fieldset class="rating">
-                              <input type="radio" id="star5-2" name="rating" value="5" /><label class = "full" for="star5-2" title="Awesome - 5 stars"></label>
-                              <input type="radio" id="star4-2" name="rating" value="4" /><label class = "full" for="star4-2" title="Pretty good - 4 stars"></label>
+                          <fieldset class="rating" id="product-rating-fieldset">
+                              <input class="product-rating" type="radio" id="product-star-5" name="product-rating" value="5" /><label rate='5' class = "product-star-label full" for="product-star-5" title="Awesome - 5 stars"></label>
+                              <input class="product-rating" type="radio" id="product-star-4" name="product-rating" value="4" /><label rate='4' class = "product-star-label full" for="product-star-4" title="Pretty good - 4 stars"></label>
                               
-                              <input type="radio" id="star3-2" name="rating" value="3" /><label class = "full" for="star3-2" title="Meh - 3 stars"></label>
+                              <input class="product-rating" type="radio" id="product-star-3" name="product-rating" value="3" /><label rate='3' class = "product-star-label full" for="product-star-3" title="Meh - 3 stars"></label>
                              
-                              <input type="radio" id="star2-2" name="rating" value="2" /><label class = "full" for="star2-2" title="Kinda bad - 2 stars"></label>
+                              <input class="product-rating" type="radio" id="product-star-2" name="product-rating" value="2" /><label rate='2' class = "product-star-label full" for="product-star-2" title="Kinda bad - 2 stars"></label>
                              
-                              <input type="radio" id="star1-2" name="rating" value="1" /><label class = "full" for="star1-2" title="Sucks big time - 1 star"></label>
+                              <input class="product-rating" type="radio" id="product-star-1" name="product-rating" value="1" /><label rate='1' class = "product-star-label full" for="product-star-1" title="Sucks big time - 1 star"></label>
                           </fieldset>
                         </div>
                     </div>
                     <div class="row" id="comment-wrapper">
                         <div class="col-md-12">
                             <span class="label">Comment: </span>
-                          <input type="text" class="form-input">
+                          <input type="text" class="form-input" id="comment-input">
                         </div>
                     </div>
                     <div class="row" id="recommend-wrapper">
                         <div class="col-md-12">
                             <span class="label">Would you recommend us? </span>
                           <div id="radio-parent">
-                              <span><input type="radio" name="gender" value="male" checked> Males</span>
-                              <span><input type="radio" name="gender" value="female"> Females</span>
-                              <span><input type="radio" name="gender" value="other"> Other</span>
+                              <span><input type="radio" name="gender" value="yes" checked> Yes</span>
+                              <span><input type="radio" name="gender" value="no"> No</span>
+                              <span><input type="radio" name="gender" value="maybe"> Maybe</span>
                           </div>
                         </div>
                     </div>
@@ -97,7 +100,7 @@
               <div class="container">
                 <div class="row">
                   <div class="col-12" id="submit-wrapper">
-                    <button>
+                    <button onclick="validateAndSubmit()">
                       Submit
                     </button>
                   </div>
@@ -114,12 +117,37 @@
     </div>
   </div>
 
+  <div class="dim" runat="server">
+    <div class="msg">
+      <div class="contatiner-fluid">
+        <div class="row">
+          <div class="col-12" id="success-msg">
+            <svg style="width:100px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 161.2 161.2" enable-background="new 0 0 161.2 161.2" xml:space="preserve">
+         <path class="path" fill="none" stroke="#7DB0D5" stroke-miterlimit="10" d="M425.9,52.1L425.9,52.1c-2.2-2.6-6-2.6-8.3-0.1l-42.7,46.2l-14.3-16.4
+           c-2.3-2.7-6.2-2.7-8.6-0.1c-1.9,2.1-2,5.6-0.1,7.7l17.6,20.3c0.2,0.3,0.4,0.6,0.6,0.9c1.8,2,4.4,2.5,6.6,1.4c0.7-0.3,1.4-0.8,2-1.5
+           c0.3-0.3,0.5-0.6,0.7-0.9l46.3-50.1C427.7,57.5,427.7,54.2,425.9,52.1z"/>
+         <circle class="path" fill="none" stroke="#7DB0D5" stroke-width="4" stroke-miterlimit="10" cx="80.6" cy="80.6" r="62.1"/>
+         <polyline class="path" fill="none" stroke="#7DB0D5" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="113,52.8 
+           74.1,108.4 48.2,86.4 "/>
+         
+         <circle class="spin" fill="none" stroke="#7DB0D5" stroke-width="4" stroke-miterlimit="10" stroke-dasharray="12.2175,12.2175" cx="80.6" cy="80.6" r="73.9"/>
+         
+         </svg>
+         <p>Thank you for your feedback</p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
 
 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="js/jquery.min.js"></script>
   <script src="js/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-  <script src="js/custom.js"></script>
+  <script src="app.js"></script>
 </body>
 
 </html>
