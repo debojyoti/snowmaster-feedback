@@ -91,9 +91,9 @@
                         <div class="col-md-12">
                             <span class="label">Would you recommend us? </span>
                           <div id="radio-parent">
-                              <span><input type="radio" name="gender" value="yes" checked> Yes</span>
-                              <span><input type="radio" name="gender" value="no"> No</span>
-                              <span><input type="radio" name="gender" value="maybe"> Maybe</span>
+                              <span><input class="recommend-btn" type="radio" name="recommend" value="yes" checked> Yes</span>
+                              <span><input class="recommend-btn" type="radio" name="recommend" value="no"> No</span>
+                              <span><input class="recommend-btn" type="radio" name="recommend" value="maybe"> Maybe</span>
                           </div>
                         </div>
                     </div>
@@ -101,7 +101,7 @@
               <div class="container">
                 <div class="row">
                   <div class="col-12" id="submit-wrapper">
-                    <button onclick="validateAndSubmit()">
+                    <button onclick="validateAndSubmit()" id="submit-button">
                       Submit
                     </button>
                   </div>

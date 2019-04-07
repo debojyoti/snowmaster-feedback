@@ -36,7 +36,7 @@ body {
     height: 65vh; }
     @media screen and (max-width: 575px) {
       body #content-wrap {
-        height: 30vh; } }
+        height: 50vh; } }
     body #content-wrap #form-wrap {
       max-height: 90%;
       overflow: auto;

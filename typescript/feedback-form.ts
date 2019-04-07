@@ -3,10 +3,12 @@ declare var toastr: any;
 
 
 export class FeedBackForm {
-    
+
     fields = {};
     isValidationActive = false;
-    
+    toastrShown = false;
+    baseUrl = 'https://us-central1-snowmaster-feedback.cloudfunctions.net';
+
     constructor() {
         this.initForm();
         this.fetchProducts();
@@ -39,7 +41,6 @@ export class FeedBackForm {
                 element: $('#comment-input')
             }
         }
-
         this.registerServiceRatingEvents();
         this.registerProductRatingEvents();
     }
@@ -81,16 +82,24 @@ export class FeedBackForm {
     }
 
     fetchProducts() {
-        const products = ['Item 1', 'item 2', 'item 3'];
-        this.fields['products'].element.html(`<option value='default' >Select a product</option>`);
-        products.forEach(product => {
-            const prevProducts = this.fields['products'].element.html();
-            this.fields['products'].element.html(prevProducts + `<option value="${product}">${product}</option>`);
+        let products = [];
+        $.ajax({
+            url: this.baseUrl + '/getAllProducts',
+            method: 'POST',
+            success: (response) => {
+                products = response;
+                this.fields['products'].element.html(`<option value='default' >Select a product</option>`);
+                products.forEach(product => {
+                    const prevProducts = this.fields['products'].element.html();
+                    this.fields['products'].element.html(prevProducts + `<option value="${product.id}">${product.name}</option>`);
+                })
+            }
         })
     }
 
     validateAndSubmit() {
         this.isValidationActive = true;
+        this.toastrShown = false;
         if (this.validate()) {
             this.submit()
                 .then(() => {
@@ -161,13 +170,15 @@ export class FeedBackForm {
                     })
                     break;
                 case 'service-rating':
-                    if (this.fields['service-rating'].value === 0) {
+                    if (!this.toastrShown && this.fields['service-rating'].value === 0) {
+                        this.toastrShown = true;
                         isValid = false;
                         toastr.error('Please provide ratings')
                     }
                     break;
                 case 'product-rating':
-                    if (this.fields['product-rating'].value === 0) {
+                    if (!this.toastrShown && this.fields['product-rating'].value === 0) {
+                        this.toastrShown = true;
                         isValid = false;
                         toastr.error('Please provide ratings')
                     }
@@ -214,20 +225,34 @@ export class FeedBackForm {
         })
     }
 
+    formatData() {
+        return {
+            name: this.fields['name'].element.val(),
+            company: this.fields['company'].element.val(),
+            date: this.fields['date'].element.val(),
+            product: this.fields['products'].element.val(),
+            service_rating: this.fields['service-rating'].value,
+            product_rating: this.fields['product-rating'].value,
+            comment: this.fields['comment'].element.val(),
+            recommendation: $('.recommend-btn:checked').val(),
+            recorded_on: + new Date()
+        }
+    }
+
     submit() {
-        return new Promise(resolve => {
-            // $.ajax({
-            //     url: 'http://some-url',
-            //     method: 'POST',
-            //     params: {
-            //         a: 1
-            //     },
-            //     success: () => {
-            //         console.log('k');
-            //         resolve(true);
-            //     }
-            // })
-            resolve(true);
+        const feedBack = this.formatData();
+        $('#submit-button').html('Submitting');
+        $('#submit-button').attr('disabled', 'true');
+            return new Promise(resolve => {
+            $.ajax({
+                url: this.baseUrl + '/submitFeedback',
+                method: 'POST',
+                data: feedBack,
+                success: () => {
+                    console.log('k');
+                    resolve(true);
+                }
+            })
         })
     }
 
@@ -252,7 +277,7 @@ export class FeedBackForm {
             "hideEasing": "linear",
             "showMethod": "fadeIn",
             "hideMethod": "fadeOut"
-          }
+        }
     }
 
 }
