@@ -267,7 +267,7 @@ h1 {
   -webkit-transform-origin: 50% 50%;
 }
 
-p {
+#succes-text {
   font-family: sans-serif;
   color: rgb(124, 255, 141);
   font-size: 30px;
