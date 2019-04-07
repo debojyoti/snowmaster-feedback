@@ -47,7 +47,7 @@ body {
       z-index: 5000000; }
       @media screen and (max-width: 575px) {
         body #content-wrap #form-wrap {
-          min-height: 70vh;
+          min-height: 65vh;
           left: 5%; } }
     body #content-wrap #grey-form {
       padding: 5% 7%;
