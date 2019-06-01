@@ -173,9 +173,8 @@ h1 {
 
   
 @media screen and (max-width: 768px) {
-  .rating-wrapper-12 > .rating > label {
-      color: #ddd;
-      float: left!important;
+  .rating-wrapper-12 > .rating  {
+      width: max-content;
   }
   .rating-wrapper-12 > fieldset {
     padding-left: 0px; 
