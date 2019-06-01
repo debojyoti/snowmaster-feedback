@@ -37,7 +37,7 @@
               <div class="container" id="grey-form">
                 <div class="row">
                   <div class="col-md-5">
-                    <span class="label">Name: </span>  <input type="text" id="name-input" class="form-input">
+                    <span class="label">Name: </span>  <input type="text" id="name-input" class="form-input" >
                   </div>
                   <div class="col-md-7">
                       <span class="label">Company: </span>
@@ -56,30 +56,72 @@
                       </div>
                   </div>
                   <div class="row">
+                      <div class="col-md-12 rating-wrapper rating-wrapper-12">
+                          <span class="label">How smooth was your order submission?: </span>
+                          <fieldset class="rating" id="order-submission-rating-fieldset">
+                              <input class="order-submission-rating" type="radio" id="order-submission-star-5" name="order-submission-rating" value="5" /><label rate='5' class = "order-submission-star-label full" for="order-submission-star-5" title="Awesome - 5 stars"></label>
+                              <input class="order-submission-rating" type="radio" id="order-submission-star-4" name="order-submission-rating" value="4" /><label rate='4' class = "order-submission-star-label full" for="order-submission-star-4" title="Pretty good - 4 stars"></label>
+                              <input class="order-submission-rating" type="radio" id="order-submission-star-3" name="order-submission-rating" value="3" /><label rate='3' class = "order-submission-star-label full" for="order-submission-star-3" title="Meh - 3 stars"></label>
+                              <input class="order-submission-rating" type="radio" id="order-submission-star-2" name="order-submission-rating" value="2" /><label rate='2' class = "order-submission-star-label full" for="order-submission-star-2" title="Kinda bad - 2 stars"></label>
+                              
+                              <input class="order-submission-rating" type="radio" id="order-submission-star-1" name="order-submission-rating" value="1" /><label rate='1' class = "order-submission-star-label full" for="order-submission-star-1" title="Sucks big time - 1 star"></label>
+                          </fieldset>
+                        </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-12 rating-wrapper rate-parent-label">
+                        <span class="label">How will you rate our technician?</span>
+                      </div>
                       <div class="col-md-6 rating-wrapper">
-                        <span class="label">Service: </span>
-                        <fieldset class="rating" id="service-rating-fieldset">
-                            <input class="service-rating" type="radio" id="service-star-5" name="service-rating" value="5" /><label rate='5' class = "service-star-label full" for="service-star-5" title="Awesome - 5 stars"></label>
-                            <input class="service-rating" type="radio" id="service-star-4" name="service-rating" value="4" /><label rate='4' class = "service-star-label full" for="service-star-4" title="Pretty good - 4 stars"></label>
-                            <input class="service-rating" type="radio" id="service-star-3" name="service-rating" value="3" /><label rate='3' class = "service-star-label full" for="service-star-3" title="Meh - 3 stars"></label>
-                            <input class="service-rating" type="radio" id="service-star-2" name="service-rating" value="2" /><label rate='2' class = "service-star-label full" for="service-star-2" title="Kinda bad - 2 stars"></label>
+                        <span class="label">Punctuality: </span>
+                        <fieldset class="rating" id="punctuality-rating-fieldset">
+                            <input class="punctuality-rating" type="radio" id="punctuality-star-5" name="punctuality-rating" value="5" /><label rate='5' class = "punctuality-star-label full" for="punctuality-star-5" title="Awesome - 5 stars"></label>
+                            <input class="punctuality-rating" type="radio" id="punctuality-star-4" name="punctuality-rating" value="4" /><label rate='4' class = "punctuality-star-label full" for="punctuality-star-4" title="Pretty good - 4 stars"></label>
+                            <input class="punctuality-rating" type="radio" id="punctuality-star-3" name="punctuality-rating" value="3" /><label rate='3' class = "punctuality-star-label full" for="punctuality-star-3" title="Meh - 3 stars"></label>
+                            <input class="punctuality-rating" type="radio" id="punctuality-star-2" name="punctuality-rating" value="2" /><label rate='2' class = "punctuality-star-label full" for="punctuality-star-2" title="Kinda bad - 2 stars"></label>
                             
-                            <input class="service-rating" type="radio" id="service-star-1" name="service-rating" value="1" /><label rate='1' class = "service-star-label full" for="service-star-1" title="Sucks big time - 1 star"></label>
+                            <input class="punctuality-rating" type="radio" id="punctuality-star-1" name="punctuality-rating" value="1" /><label rate='1' class = "punctuality-star-label full" for="punctuality-star-1" title="Sucks big time - 1 star"></label>
                         </fieldset>
                       </div>
                       <div class="col-md-6  rating-wrapper">
-                          <span class="label">Product: </span>
-                          <fieldset class="rating" id="product-rating-fieldset">
-                              <input class="product-rating" type="radio" id="product-star-5" name="product-rating" value="5" /><label rate='5' class = "product-star-label full" for="product-star-5" title="Awesome - 5 stars"></label>
-                              <input class="product-rating" type="radio" id="product-star-4" name="product-rating" value="4" /><label rate='4' class = "product-star-label full" for="product-star-4" title="Pretty good - 4 stars"></label>
+                          <span class="label">Discipline: </span>
+                          <fieldset class="rating" id="discipline-rating-fieldset">
+                              <input class="discipline-rating" type="radio" id="discipline-star-5" name="discipline-rating" value="5" /><label rate='5' class = "discipline-star-label full" for="discipline-star-5" title="Awesome - 5 stars"></label>
+                              <input class="discipline-rating" type="radio" id="discipline-star-4" name="discipline-rating" value="4" /><label rate='4' class = "discipline-star-label full" for="discipline-star-4" title="Pretty good - 4 stars"></label>
                               
-                              <input class="product-rating" type="radio" id="product-star-3" name="product-rating" value="3" /><label rate='3' class = "product-star-label full" for="product-star-3" title="Meh - 3 stars"></label>
+                              <input class="discipline-rating" type="radio" id="discipline-star-3" name="discipline-rating" value="3" /><label rate='3' class = "discipline-star-label full" for="discipline-star-3" title="Meh - 3 stars"></label>
                              
-                              <input class="product-rating" type="radio" id="product-star-2" name="product-rating" value="2" /><label rate='2' class = "product-star-label full" for="product-star-2" title="Kinda bad - 2 stars"></label>
+                              <input class="discipline-rating" type="radio" id="discipline-star-2" name="discipline-rating" value="2" /><label rate='2' class = "discipline-star-label full" for="discipline-star-2" title="Kinda bad - 2 stars"></label>
                              
-                              <input class="product-rating" type="radio" id="product-star-1" name="product-rating" value="1" /><label rate='1' class = "product-star-label full" for="product-star-1" title="Sucks big time - 1 star"></label>
+                              <input class="discipline-rating" type="radio" id="discipline-star-1" name="discipline-rating" value="1" /><label rate='1' class = "discipline-star-label full" for="discipline-star-1" title="Sucks big time - 1 star"></label>
                           </fieldset>
                         </div>
+                        <div class="col-md-6 rating-wrapper rating-wrapper-12">
+                            <span class="label">Handling of the product: </span>
+                            <fieldset class="rating" id="product-handling-rating-fieldset">
+                                <input class="product-handling-rating" type="radio" id="product-handling-star-5" name="product-handling-rating" value="5" /><label rate='5' class = "product-handling-star-label full" for="product-handling-star-5" title="Awesome - 5 stars"></label>
+                                <input class="product-handling-rating" type="radio" id="product-handling-star-4" name="product-handling-rating" value="4" /><label rate='4' class = "product-handling-star-label full" for="product-handling-star-4" title="Pretty good - 4 stars"></label>
+                                
+                                <input class="product-handling-rating" type="radio" id="product-handling-star-3" name="product-handling-rating" value="3" /><label rate='3' class = "product-handling-star-label full" for="product-handling-star-3" title="Meh - 3 stars"></label>
+                               
+                                <input class="product-handling-rating" type="radio" id="product-handling-star-2" name="product-handling-rating" value="2" /><label rate='2' class = "product-handling-star-label full" for="product-handling-star-2" title="Kinda bad - 2 stars"></label>
+                               
+                                <input class="product-handling-rating" type="radio" id="product-handling-star-1" name="product-handling-rating" value="1" /><label rate='1' class = "product-handling-star-label full" for="product-handling-star-1" title="Sucks big time - 1 star"></label>
+                            </fieldset>
+                          </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 rating-wrapper rate-parent-label rating-wrapper-12">
+                            <span class="label">How satisfied were you with the product?: </span>
+                            <fieldset class="rating" id="product-satisfaction-rating-fieldset">
+                                <input class="product-satisfaction-rating" type="radio" id="product-satisfaction-star-5" name="product-satisfaction-rating" value="5" /><label rate='5' class = "product-satisfaction-star-label full" for="product-satisfaction-star-5" title="Awesome - 5 stars"></label>
+                                <input class="product-satisfaction-rating" type="radio" id="product-satisfaction-star-4" name="product-satisfaction-rating" value="4" /><label rate='4' class = "product-satisfaction-star-label full" for="product-satisfaction-star-4" title="Pretty good - 4 stars"></label>
+                                <input class="product-satisfaction-rating" type="radio" id="product-satisfaction-star-3" name="product-satisfaction-rating" value="3" /><label rate='3' class = "product-satisfaction-star-label full" for="product-satisfaction-star-3" title="Meh - 3 stars"></label>
+                                <input class="product-satisfaction-rating" type="radio" id="product-satisfaction-star-2" name="product-satisfaction-rating" value="2" /><label rate='2' class = "product-satisfaction-star-label full" for="product-satisfaction-star-2" title="Kinda bad - 2 stars"></label>
+                                
+                                <input class="product-satisfaction-rating" type="radio" id="product-satisfaction-star-1" name="product-satisfaction-rating" value="1" /><label rate='1' class = "product-satisfaction-star-label full" for="product-satisfaction-star-1" title="Sucks big time - 1 star"></label>
+                            </fieldset>
+                          </div>
                     </div>
                     <div class="row" id="comment-wrapper">
                         <div class="col-md-12">
@@ -87,7 +129,7 @@
                           <input type="text" class="form-input" id="comment-input">
                         </div>
                     </div>
-                    <div class="row" id="recommend-wrapper">
+                    <!-- <div class="row" id="recommend-wrapper">
                         <div class="col-md-12">
                             <span class="label">Would you recommend us? </span>
                           <div id="radio-parent">
@@ -96,7 +138,7 @@
                               <span><input class="recommend-btn" type="radio" name="recommend" value="maybe"> Maybe</span>
                           </div>
                         </div>
-                    </div>
+                    </div> -->
               </div>
               <div class="container">
                 <div class="row">

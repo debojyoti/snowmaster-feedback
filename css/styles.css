@@ -83,6 +83,17 @@ body {
   display: flex;
   align-items: center; }
 
+  @media screen and (max-width: 768px) {
+    .rating-wrapper-12 {
+      display: block;
+      align-items: center; } }
+
+  
+.rate-parent-label {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
 #comment-wrapper {
   margin-top: 30px; }
   #comment-wrapper input {
@@ -109,6 +120,10 @@ body {
 .rating {
   display: inline;
   padding-left: 10px; }
+
+  @media screen and (max-width: 768px) {
+    .rating {
+      display: block; } }
 
 #submit-wrapper {
   padding: 20px 0;
@@ -155,6 +170,17 @@ h1 {
 .rating > label {
   color: #ddd;
   float: right; }
+
+  
+@media screen and (max-width: 768px) {
+  .rating-wrapper-12 > .rating > label {
+      color: #ddd;
+      float: left!important;
+  }
+  .rating-wrapper-12 > fieldset {
+    padding-left: 0px; 
+  }
+ }
 
 /***** CSS Magic to Highlight Stars on Hover *****/
 .rating > input:checked ~ label,
@@ -247,6 +273,8 @@ h1 {
   padding-top: 30px;
 }
 
+
+
 .checkmark {
   width: 50px;
   margin: 0 auto;
@@ -329,3 +357,8 @@ h1 {
     opacity: 1;
   }
 }
+
+input:-webkit-autofill {
+  color: #2a2a2a !important;
+}
+

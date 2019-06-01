@@ -29,56 +29,125 @@ export class FeedBackForm {
             'products': {
                 element: $('#product-select')
             },
-            'service-rating': {
-                element: $('.service-star-label'),
+            'order-submission': {
+                element: $('.order-submission-star-label'),
                 value: 0
             },
-            'product-rating': {
-                element: $('.product-star-label'),
+            'punctuality-rating': {
+                element: $('.punctuality-star-label'),
+                value: 0
+            },
+            'discipline-rating': {
+                element: $('.discipline-star-label'),
+                value: 0
+            },
+            'product-handling-rating': {
+                element: $('.product-handling-star-label'),
+                value: 0
+            },
+            'product-satisfaction-rating': {
+                element: $('.product-satisfaction-star-label'),
                 value: 0
             },
             'comment': {
                 element: $('#comment-input')
             }
         }
-        this.registerServiceRatingEvents();
-        this.registerProductRatingEvents();
+        this.registerOrderSubmissionEvents();
+        this.registerPunctualityRatingEvents();
+        this.registerDisciplineRatingEvents();
+        this.registerProductHandlingRatingEvents();
+        this.registerProductSatisfactionRatingEvents();
     }
 
-    registerServiceRatingEvents() {
-        Object.keys(this.fields['service-rating'].element).forEach(index => {
-            const field = $(this.fields['service-rating'].element[index]);
+    registerOrderSubmissionEvents() {
+        Object.keys(this.fields['order-submission'].element).forEach(index => {
+            const field = $(this.fields['order-submission'].element[index]);
             if (index !== 'length' && index !== 'prevObject') {
                 field.on('click', (e) => {
-                    this.updateServiceRating(e);
+                    this.updateOrderSubmissionRating(e);
                 })
             }
         })
     }
 
-    registerProductRatingEvents() {
-        Object.keys(this.fields['product-rating'].element).forEach(index => {
-            const field = $(this.fields['product-rating'].element[index]);
+    registerPunctualityRatingEvents() {
+        Object.keys(this.fields['punctuality-rating'].element).forEach(index => {
+            const field = $(this.fields['punctuality-rating'].element[index]);
             if (index !== 'length' && index !== 'prevObject') {
                 field.on('click', (e) => {
-                    this.updateProductRating(e);
+                    this.updatePunctualityRating(e);
                 })
             }
         })
     }
 
-    updateProductRating(e) {
-        if (this.isValidationActive) {
-            this.validate();
-        }
-        this.fields['product-rating'].value = Number(e.currentTarget.attributes[0].value);
+    registerDisciplineRatingEvents() {
+        Object.keys(this.fields['discipline-rating'].element).forEach(index => {
+            const field = $(this.fields['discipline-rating'].element[index]);
+            if (index !== 'length' && index !== 'prevObject') {
+                field.on('click', (e) => {
+                    this.updateDisciplineRating(e);
+                })
+            }
+        })
     }
 
-    updateServiceRating(e) {
+    registerProductHandlingRatingEvents() {
+        Object.keys(this.fields['product-handling-rating'].element).forEach(index => {
+            const field = $(this.fields['product-handling-rating'].element[index]);
+            if (index !== 'length' && index !== 'prevObject') {
+                field.on('click', (e) => {
+                    this.updateProductHandlingRating(e);
+                })
+            }
+        })
+    }
+
+    registerProductSatisfactionRatingEvents() {
+        Object.keys(this.fields['product-satisfaction-rating'].element).forEach(index => {
+            const field = $(this.fields['product-satisfaction-rating'].element[index]);
+            if (index !== 'length' && index !== 'prevObject') {
+                field.on('click', (e) => {
+                    this.updateProductSatisfactionRating(e);
+                })
+            }
+        })
+    }
+
+    updatePunctualityRating(e) {
         if (this.isValidationActive) {
             this.validate();
         }
-        this.fields['service-rating'].value = Number(e.currentTarget.attributes[0].value);
+        this.fields['punctuality-rating'].value = Number(e.currentTarget.attributes[0].value);
+    }
+
+    updateOrderSubmissionRating(e) {
+        if (this.isValidationActive) {
+            this.validate();
+        }
+        this.fields['order-submission'].value = Number(e.currentTarget.attributes[0].value);
+    }
+
+    updateDisciplineRating(e) {
+        if (this.isValidationActive) {
+            this.validate();
+        }
+        this.fields['discipline-rating'].value = Number(e.currentTarget.attributes[0].value);
+    }
+
+    updateProductHandlingRating(e) {
+        if (this.isValidationActive) {
+            this.validate();
+        }
+        this.fields['product-handling-rating'].value = Number(e.currentTarget.attributes[0].value);
+    }
+
+    updateProductSatisfactionRating(e) {
+        if (this.isValidationActive) {
+            this.validate();
+        }
+        this.fields['product-satisfaction-rating'].value = Number(e.currentTarget.attributes[0].value);
     }
 
     fetchProducts() {
@@ -169,15 +238,36 @@ export class FeedBackForm {
                         this.validate();
                     })
                     break;
-                case 'service-rating':
-                    if (!this.toastrShown && this.fields['service-rating'].value === 0) {
+                case 'order-submission':
+                    if (!this.toastrShown && this.fields['order-submission'].value === 0) {
                         this.toastrShown = true;
                         isValid = false;
                         toastr.error('Please provide ratings')
                     }
                     break;
-                case 'product-rating':
-                    if (!this.toastrShown && this.fields['product-rating'].value === 0) {
+                case 'punctuality-rating':
+                    if (!this.toastrShown && this.fields['punctuality-rating'].value === 0) {
+                        this.toastrShown = true;
+                        isValid = false;
+                        toastr.error('Please provide ratings')
+                    }
+                    break;
+                case 'discipline-rating':
+                    if (!this.toastrShown && this.fields['discipline-rating'].value === 0) {
+                        this.toastrShown = true;
+                        isValid = false;
+                        toastr.error('Please provide ratings')
+                    }
+                    break;
+                case 'product-handling-rating':
+                    if (!this.toastrShown && this.fields['product-handling-rating'].value === 0) {
+                        this.toastrShown = true;
+                        isValid = false;
+                        toastr.error('Please provide ratings')
+                    }
+                    break;
+                case 'product-satisfaction-rating':
+                    if (!this.toastrShown && this.fields['product-satisfaction-rating'].value === 0) {
                         this.toastrShown = true;
                         isValid = false;
                         toastr.error('Please provide ratings')
@@ -231,10 +321,12 @@ export class FeedBackForm {
             company: this.fields['company'].element.val(),
             date: this.fields['date'].element.val(),
             product: this.fields['products'].element.val(),
-            service_rating: this.fields['service-rating'].value,
-            product_rating: this.fields['product-rating'].value,
+            order_submission_rating: this.fields['order-submission'].value,
+            punctuality_rating: this.fields['punctuality-rating'].value,
+            discipline_rating: this.fields['discipline-rating'].value,
+            product_handling_rating: this.fields['product-handling-rating'].value,
+            product_satisfaction_rating: this.fields['product-satisfaction-rating'].value,
             comment: this.fields['comment'].element.val(),
-            recommendation: $('.recommend-btn:checked').val(),
             recorded_on: + new Date()
         }
     }
