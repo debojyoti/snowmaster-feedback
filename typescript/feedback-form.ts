@@ -156,11 +156,11 @@ export class FeedBackForm {
             url: this.baseUrl + '/getAllProducts',
             method: 'POST',
             success: (response) => {
-                products = response;
+                products = response.filter(p => p.data.isActive === true);
                 this.fields['products'].element.html(`<option value='default' >Select a product</option>`);
                 products.forEach(product => {
                     const prevProducts = this.fields['products'].element.html();
-                    this.fields['products'].element.html(prevProducts + `<option value="${product.id}">${product.name}</option>`);
+                    this.fields['products'].element.html(prevProducts + `<option value="${product.data.id}">${product.data.name}</option>`);
                 })
             }
         })
@@ -275,7 +275,8 @@ export class FeedBackForm {
                     break;
                 case 'comment':
                     value = this.fields[fieldName].element.val();
-                    if (value === '') {
+                    // if (value === '') {
+                    if (false) {
                         isValid = false;
                         this.fields[fieldName].element.attr('placeholder', 'Required');
                         this.fields[fieldName].element.css('border-bottom', '1px solid red');
